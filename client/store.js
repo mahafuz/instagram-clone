@@ -10,12 +10,13 @@ import posts from './data/posts';
 
 // create an object for the default data
 const defaultState = {
-    comments,
-    posts
+    posts,
+    comments
 };
 
 export const store = createStore(rootReducer, defaultState);
-export const history = syncHistoryWithStore(browserHistory, store);
+export const history = syncHistoryWithStore(browserHistory, store, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 export default store;
 
